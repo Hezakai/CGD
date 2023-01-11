@@ -67,6 +67,7 @@ button {
 
 /* Modal Content/Box */
 .modal-content {
+    display: flex;
     background-color: #fefefe;
     margin: 15% auto;
     /* 15% from the top and centered */
