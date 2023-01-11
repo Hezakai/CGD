@@ -8,12 +8,14 @@
 
 // test obj for simulating the generated of search results to both HTML and modal will need to update with a constructor function later (new)
 const testResultFromApi = {
-    Name: "Call of Dooky",
+    Name: "Call of Doody",
     Pub: "Craptivision",
-    Genre: "First Pooper Shooter",
+    Genre: "First Person Squirter",
     Studio: "Infinity Turd",
     OPrice: "69.69",
     SPrice: "4.20",
+    Cover: "./assets/imgs/COD.PNG",
+    Link: "https://apps.apple.com/app/id983281705"
 }
 
 // passes test obj to modal
@@ -24,6 +26,8 @@ $("#modalGenre").text("Genre: " + testResultFromApi.Genre)
 $("#modalStudio").text("Studio: " + testResultFromApi.Studio)
 $("#modalOPrice").text("Original Price: $" + testResultFromApi.OPrice)
 $("#modalSPrice").text("Sale Price: $" + testResultFromApi.SPrice)
+document.getElementById("modalCover").src=testResultFromApi.Cover;
+// $("#buyBtn").attr(location.href = "https://apps.apple.com/app/id983281705")
 
 //modal script
 var modals = document.getElementsByClassName('modal');
