@@ -13,11 +13,11 @@ function getApi(requestUrl) {
   })
     .then(function(data) {
       console.log(data)
-      for (var i = 0; i < data.results.length; i++) {
-        var genreEl = document.createElement('p');
-        genreEl.textContent = data.results[i].genres;
-        genresContainer.append(genreEl);
-      }
+      // for (var i = 0; i < data.results.length; i++) {
+      //   var genreEl = document.createElement('p');
+      //   genreEl.textContent = data.results[i].genres;
+      //   genresContainer.append(genreEl);
+      // }
   });
   
 }
