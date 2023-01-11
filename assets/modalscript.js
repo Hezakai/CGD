@@ -1,29 +1,31 @@
-// // Get the modal
-// var modal = document.getElementById("testModal");
+// constructor function for building modals
 
-// // Get the button that opens the modal
-// var btn = document.getElementById("testGame1");
+// function Modal(Name, Publ, Genre, Studio, OPrice, SPrice) {
+//     this.make = make;
+//     this.model = model;
+//     this.year = year;
+//   }
 
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
+// test obj for simulating the generated of search results to both HTML and modal will need to update with a constructor function later (new)
+const testResultFromApi = {
+    Name: "Call of Dooky",
+    Pub: "Craptivision",
+    Genre: "First Pooper Shooter",
+    Studio: "Infinity Turd",
+    OPrice: "69.69",
+    SPrice: "4.20",
+}
 
-// // When the user clicks on the button, open the modal
-// btn.onclick = function () {
-//     modal.style.display = "block";
-// }
+// passes test obj to modal
+$("#modalBtn").text(testResultFromApi.Name)
+$("#modalName").text(testResultFromApi.Name)
+$("#modalPub").text("Publisher: " + testResultFromApi.Pub)
+$("#modalGenre").text("Genre: " + testResultFromApi.Genre)
+$("#modalStudio").text("Studio: " + testResultFromApi.Studio)
+$("#modalOPrice").text("Original Price: $" + testResultFromApi.OPrice)
+$("#modalSPrice").text("Sale Price: $" + testResultFromApi.SPrice)
 
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function () {
-//     modal.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// }
-
+//modal script
 var modals = document.getElementsByClassName('modal');
 // Get the button that opens the modal
 var btns = document.getElementsByClassName("openmodal");
