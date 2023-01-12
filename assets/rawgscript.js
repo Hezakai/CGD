@@ -2,8 +2,8 @@ var requestUrl = 'https://api.rawg.io/api/games?key=09641c2e0fcd40ee8c29ef6543fe
 
 var responseText = document.getElementById('response-text');
 var genresContainer = document.getElementById('modalGenre')
-
-
+var nameContainer = document.getElementById('modalName')
+var gameCover = document.getElementById('modalCover')
 
 function getApi(requestUrl) {
   fetch(requestUrl)
@@ -14,14 +14,17 @@ function getApi(requestUrl) {
     .then(function(data) {
       console.log(data);
       // console.log(data.results[0].genres);
+      nameContainer.textContent = data.results[0].name;
+      gameCover.src = data.results[0].background_image;
 
       for (var i = 0; i < data.results.length; i++) {
         console.log(data.results[i])
+  
       }
       
       for (var i = 0; i < data.results.length; i++) {
         console.log(data.results[0].genres[i])
-        genresContainer.textContent = "Genre: " + data.results[0].genres[0].name;
+        genresContainer.textContent = 'Genre: ' + data.results[0].genres[0].name;
     
       }
   });
