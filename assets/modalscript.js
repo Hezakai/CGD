@@ -18,7 +18,7 @@ const testResultFromApi = {
     OPrice: "69.00",
     SPrice: "4.20",
     Cover: "./assets/imgs/COD.PNG",
-    Link: "https://store.steampowered.com/"
+    Link: "https://www.cheapshark.com/redirect?dealID=CJoA55YWTkemUy%2FDt1M0PxmeseDTarv5RCjIii3e6SA%3D"
 }
 
 // passes test obj to modal
