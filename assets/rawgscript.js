@@ -4,31 +4,39 @@ var responseText = document.getElementById('response-text');
 var genresContainer = document.getElementById('modalGenre')
 var nameContainer = document.getElementById('modalName')
 var gameCover = document.getElementById('modalCover')
+var genreUl = document.createElement('ul')
+      genreUl.classList.add('genre')
+var genreLi = document.createElement('li')
 
 function getApi(requestUrl) {
   fetch(requestUrl)
     .then(function (response) {
       console.log(response);
       return response.json();
-  })
-    .then(function(data) {
+    })
+    .then(function (data) {
       console.log(data);
-      // console.log(data.results[0].genres);
-      nameContainer.textContent = data.results[0].name;
-      gameCover.src = data.results[0].background_image;
 
-      for (var i = 0; i < data.results.length; i++) {
-        console.log(data.results[i])
-  
-      }
-      
-      for (var i = 0; i < data.results.length; i++) {
+      for (var i = 0; i < data.results[0].genres.length; i++) {
         console.log(data.results[0].genres[i])
-        genresContainer.textContent = 'Genre: ' + data.results[0].genres[0].name;
-    
+        nameContainer.textContent = data.results[0].name;
+        gameCover.src = data.results[0].background_image;
+
+        console.log("here is the name", data.results[0].genres[i].name)
+
+        // document.getElementById('genre').textContent = (data.results[0].genres[i].name);
+        genreLi.textContent = data.results[0].genres[i].name;
+        genreUl.textContent = 'Genres:'
+
+        genresContainer.appendChild(genreUl);
+        genreUl.appendChild(genreLi);
+
       }
-  });
-  
+    })
+    .then(function (gameGenres) {
+      console.log(gameGenres)
+
+    });
 }
 
 getApi(requestUrl);
