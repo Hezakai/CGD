@@ -1,9 +1,12 @@
 // constructor function for building modals
 
-// function Modal(Name, Publ, Genre, Studio, OPrice, SPrice) {
-//     this.make = make;
-//     this.model = model;
-//     this.year = year;
+// function Modal(Name, Pub, Genre, Studio, OPrice, SPrice) {
+//     this.Pub = pub;
+//     this.Genre = genre;
+//     this.Studio = studio;
+//     this.OPrice = OPrice;
+//     this.SPrice = SPrice;
+//     this.Link = Link;
 //   }
 
 // test obj for simulating the generated of search results to both HTML and modal will need to update with a constructor function later (new)
@@ -12,10 +15,10 @@ const testResultFromApi = {
     Pub: "Craptivision",
     Genre: "First Person Squirter",
     Studio: "Infinity Turd",
-    OPrice: "69.69",
+    OPrice: "69.00",
     SPrice: "4.20",
     Cover: "./assets/imgs/COD.PNG",
-    Link: "https://apps.apple.com/app/id983281705"
+    Link: "https://store.steampowered.com/"
 }
 
 // passes test obj to modal
@@ -27,7 +30,10 @@ $("#modalStudio").text("Studio: " + testResultFromApi.Studio)
 $("#modalOPrice").text("Original Price: $" + testResultFromApi.OPrice)
 $("#modalSPrice").text("Sale Price: $" + testResultFromApi.SPrice)
 document.getElementById("modalCover").src=testResultFromApi.Cover;
-// $("#buyBtn").attr(location.href = "https://apps.apple.com/app/id983281705")
+$("#buyBtn").attr("href", testResultFromApi.Link)
+
+//attch info to modal \ sibling p tag with name  
+// data from both APIs, building HTML with tailwinds
 
 //modal script
 var modals = document.getElementsByClassName('modal');
