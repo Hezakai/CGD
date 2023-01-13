@@ -8,6 +8,7 @@ var genreUl = document.createElement('ul')
       genreUl.classList.add('genre')
 var genreLi = document.createElement('li')
 
+
 function getApi(requestUrl) {
   fetch(requestUrl)
     .then(function (response) {
@@ -16,20 +17,22 @@ function getApi(requestUrl) {
     })
     .then(function (data) {
       console.log(data);
+      gameCover.src = data.results[0].background_image;
 
       for (var i = 0; i < data.results[0].genres.length; i++) {
         console.log(data.results[0].genres[i])
         nameContainer.textContent = data.results[0].name;
-        gameCover.src = data.results[0].background_image;
+        var genreArr = [data.results[0].genres[0].name, data.results[0].genres[1].name, data.results[0].genres[2].name, data.results[0].genres[3].name]
 
-        console.log("here is the name", data.results[0].genres[i].name)
+        // console.log("here is the name", data.results[0].genres[i].name)
 
         // document.getElementById('genre').textContent = (data.results[0].genres[i].name);
-        genreLi.textContent = data.results[0].genres[i].name;
+        genreLi.textContent = genreArr;
         genreUl.textContent = 'Genres:'
 
-        genresContainer.appendChild(genreUl);
         genreUl.appendChild(genreLi);
+        genresContainer.appendChild(genreUl);
+        
 
       }
     })
