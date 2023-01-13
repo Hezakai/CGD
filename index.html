@@ -21,28 +21,38 @@
     <main>
         <!-- Search Section -->
         <div class="flex flex-col justify-center items-center p-4 m-4" id="searchBar">
-            <!-- <h1>Enter Game Name</h1> -->            
+            <!-- <h1>Enter Game Name</h1> -->
             <input type="text" id="searchInput" class="text-center bg-slate-600 my-4" placeholder="Enter Game Name">
             <div class="flex flex-row text-white" id=searchParam>
                 <input type="checkbox" class="mx-2" id="genreChk" name="genreChk" value="genreChk">
                 <label for="genreChk">Genre</label><br>
-                <input type="checkbox" class="mx-2 id="publisherChk" name="publisherChk" value="publisherChk">
+                <input type="checkbox" class="mx-2 id=" publisherChk" name="publisherChk" value="publisherChk">
                 <label for="publisherChk">Publisher</label><br>
-                <input type="checkbox" class="mx-2 id="studioChk" name="studioChk" value="studioChk">
+                <input type="checkbox" class="mx-2 id=" studioChk" name="studioChk" value="studioChk">
                 <label for="etc">Studio</label><br>
             </div>
-            <button type="searchBtn" class="m-5 p-3 px-6 pt-2 text-white bg-slate-800 rounded-full baseline hover:bg-red-500" id="searchBtn">Click To Find Similar Games!</button>
+            <button type="searchBtn"
+                class="m-5 p-3 px-6 pt-2 text-white bg-slate-800 rounded-full baseline hover:bg-red-500"
+                id="searchBtn">Click To Find Similar Games!</button>
         </div>
         <!-- Results Section -->
-        <div id="resultsBox">
+        <div id="resultsBox" class="results-box">
             <!-- Test Modals -->
             <!-- The Modal -->
-            <div class="modal myModal">
+            <div class="modal myModal hidden">
+
 
                 <!-- Modal content -->
                 <div class="modal-content bg-gray-800 flex-col items-center text-white">
                     <span class="close self-end ">&times;</span>
-                    <img class="mb-20" id="modalCover" src="" style="width:100%;max-width:200px"><img>
+  <!--NEW CODE-->
+                   <!-- <div class="modal-info">
+
+                    </div>
+                    <img class="mb-20" id="modalCover" src="" style="width:100%;max-width:200px"><img> -->
+                    
+<!--ORIGINAL CODE-->                    
+                    <!-- <img class="min-w-full mb-20" id="modalCover" src="" style="width:100%;max-width:200px"><img> -->
                     <p id="modalName"></p>
                     <p id="modalPub"></p>
                     <p id="modalGenre"></p>
@@ -50,7 +60,9 @@
                     <p id="modalOPrice"></p>
                     <p id="modalSPrice"></p>
                     <!-- Having trouble with button link - see issue 1 -->
-                    <button class="my-12 h-12 w-24 bg-white text-black rounded-full hover:bg-red-500 hover:text-white"><a id="buyBtn" href=>Buy Now!</a></button>
+                    <button
+                        class="my-12 h-12 w-24 bg-white text-white rounded-full hover:bg-red-500 hover:text-white"><a
+                            id="buyBtn" href=>Buy Now!</a></button>
                 </div>
             </div>
             <button class="openmodal myBtn text-white ml-2 my-2 hover:text-gray-500" id="modalBtn"></button>
@@ -65,7 +77,7 @@
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <!--links to the JS file in the assets folder-->
     <script src="./assets/modalscript.js"></script>
-    <script src="./assets/rawgscript.js"></script>
+    <!-- <script src="./assets/rawgscript.js"></script> -->
     <script src="./assets/cheapsharkscript.js"></script>
 </body>
 
