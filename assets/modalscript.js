@@ -63,11 +63,13 @@ function populate() {
     for (var i = 0; i < resultsArr.length; i++) {
         var resultTitle = document.createElement("p")
         var resultsPrice = document.createElement("p")
+        var resultsCover = document.createElement("img")
         //TODO:add image var here
         resultTitle.textContent = resultsArr[i].name
         resultsPrice.textContent = resultsArr[i].sPrice
+        resultsCover.setAttribute("src", resultsArr[i].cover)
         //TODO:add image params here
-        resultsBox.append(resultTitle,resultsPrice,)
+        resultsBox.append(resultTitle,resultsCover,resultsPrice,)
 
 
         //event listenr that pulls the game name clicked from the results field
