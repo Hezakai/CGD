@@ -9,44 +9,113 @@
 //     this.Link = Link;
 //   }
 
-// test obj for simulating the generated of search results to both HTML and modal will need to update with a constructor function later (new)
-const testResultFromApi = {
-    Name: "Call of Doody",
-    Pub: "Craptivision",
-    Genre: "First Person Squirter",
-    Studio: "Infinity Turd",
-    OPrice: "69.00",
-    SPrice: "4.20",
-    Cover: "./assets/imgs/COD.PNG",
-    Link: "https://www.cheapshark.com/redirect?dealID=CJoA55YWTkemUy%2FDt1M0PxmeseDTarv5RCjIii3e6SA%3D"
-}
+// results array fed by the APIs
+var resultsArr = [
+    {
+        name: "Borderlands",
+        pub: "Borderlands Pub",
+        genre: "Borderlands Genre",
+        studio: "Borderlands Studio",
+        oPrice: "Borderlands OPrice",
+        sPrice: "Borderlands SPrice",
+        cover: "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Borderlandscover.jpg/220px-Borderlandscover.jpg",
+        link: "https://www.cheapshark.com/redirect?dealID=Y3grZU9fHdHkzgjh%2BR8ThjRlw7T6kpDnszM3FwOduLs%3D"
+    },
+    {
+        name: "XCOM 2",
+        pub: "XCOM 2 Pub",
+        genre: "XCOM 2 Genre",
+        studio: "XCOM 2 Studio",
+        oPrice: "XCOM 2 OPrice",
+        sPrice: "XCOM 2 SPrice",
+        cover: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/XCOM_2_cover_art.jpg/220px-XCOM_2_cover_art.jpg",
+        link: "https://www.cheapshark.com/redirect?dealID=IVj099Jarz6odiHw35jmGZyckpjmQeAmYI0%2BFyn8i1A%3D"
+    },
+    {
+        name: "Back 4 Blood",
+        pub: "Back 4 Blood Pub",
+        genre: "Back 4 Blood Genre",
+        studio: "Back 4 Blood Studio",
+        oPrice: "Back 4 Blood OPrice",
+        sPrice: "Back 4 Blood SPrice",
+        cover: "https://upload.wikimedia.org/wikipedia/en/thumb/6/60/Back_4_Blood_cover_art.jpg/220px-Back_4_Blood_cover_art.jpg",
+        link: "https://www.cheapshark.com/redirect?dealID=https://www.cheapshark.com/redirect?dealID=ESIIJCjm9wUuaO1hhZLZLgd7OS3qorpPmT44E70YSas%3D"
+    }
+]
 
-// passes test obj to modal
-$("#modalBtn").text(testResultFromApi.Name)
-$("#modalName").text(testResultFromApi.Name)
-$("#modalPub").text("Publisher: " + testResultFromApi.Pub)
-$("#modalGenre").text("Genre: " + testResultFromApi.Genre)
-$("#modalStudio").text("Studio: " + testResultFromApi.Studio)
-$("#modalOPrice").text("Original Price: $" + testResultFromApi.OPrice)
-$("#modalSPrice").text("Sale Price: $" + testResultFromApi.SPrice)
-document.getElementById("modalCover").src=testResultFromApi.Cover;
-$("#buyBtn").attr("href", testResultFromApi.Link)
 
-//attch info to modal \ sibling p tag with name  
-// data from both APIs, building HTML with tailwinds
-
-//modal script
+var resultsBox = document.querySelector('.results-box')
 var modals = document.getElementsByClassName('modal');
-// Get the button that opens the modal
+var closeModal = document.querySelector('.close')
+var modalInfo = document.querySelector('.modal-info')
+
+//X to close
+closeModal.addEventListener('click', function () {
+    modals[0].classList.add('hidden')
+    modals[0].classList.remove('show')
+})
+
+populate()
+
+//populates the result field from results array
+function populate() {
+
+    for (var i = 0; i < resultsArr.length; i++) {
+        var resultTitle = document.createElement("p")
+        var resultsPrice = document.createElement("p")
+        //TODO:add image var here
+        resultTitle.textContent = resultsArr[i].name
+        resultsPrice.textContent = resultsArr[i].sPrice
+        //TODO:add image params here
+        resultsBox.append(resultTitle,resultsPrice,)
+
+
+        //event listenr that pulls the game name clicked from the results field
+        resultTitle.addEventListener('click', function (event) {
+            var clicked = event.target.textContent
+
+            var clickedObjectData = resultsArr.filter(item => item.name === clicked)
+
+            console.log(clickedObjectData)
+
+            populateModal(clickedObjectData)
+        })
+
+    }
+}
+
+//toggles modal on and fills with info
+function populateModal(value) {
+    modalInfo.textContent = ''
+    //changes CSS
+    modals[0].classList.remove('hidden')
+    modals[0].classList.add('show')
+
+    //builder variables
+    var modalTitle = document.createElement('h2')
+    //TODO ADD MODAL IMG & BUY BTN
+    var modalpub = document.createElement('h2')
+    var modalgenre = document.createElement('h2')
+    var modalstudio = document.createElement('h2')
+    var modaloprice = document.createElement('h2')
+    var modalsprice = document.createElement('h2')
+    var modallink = document.createElement('h2')
+    //what to build
+    modalTitle.textContent = value[0].name
+    modalpub.textContent = value[0].pub
+    modalgenre.textContent = value[0].genre
+    modalstudio.textContent = value[0].studio
+    modaloprice.textContent = value[0].oprice
+    modalsprice.textContent = value[0].spricename
+    modallink.textContent = value[0].link
+    //how to build
+    modalInfo.append(modalTitle)
+    modalInfo.append(modalpub)
+    modalInfo.append(modalgenre)
+    modalInfo.append(modalstudio)
+    modalInfo.append(modaloprice)
+    modalInfo.append(modalsprice)
+    modalInfo.append(modallink)
+}
+
 var btns = document.getElementsByClassName("openmodal");
-var spans=document.getElementsByClassName("close");
-for(let i=0;i<btns.length;i++){
-    btns[i].onclick = function() {
-        modals[i].style.display = "block";
-    }
-}
-for(let i=0;i<spans.length;i++){
-    spans[i].onclick = function() {
-        modals[i].style.display = "none";
-    }
-}

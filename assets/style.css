@@ -45,8 +45,15 @@ button {
 }
 
 /* The Modal (background) */
-.modal {
+.hidden {
     display: none;
+}
+
+.show {
+    display: block;
+}
+
+.modal {
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
