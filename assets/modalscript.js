@@ -64,11 +64,9 @@ function populate() {
         var resultTitle = document.createElement("p")
         var resultsPrice = document.createElement("p")
         var resultsCover = document.createElement("img")
-        //TODO:add image var here
         resultTitle.textContent = resultsArr[i].name
         resultsPrice.textContent = resultsArr[i].sPrice
         resultsCover.setAttribute("src", resultsArr[i].cover)
-        //TODO:add image params here
         resultsBox.append(resultTitle,resultsCover,resultsPrice,)
 
 
@@ -101,15 +99,17 @@ function populateModal(value) {
     var modalstudio = document.createElement('h2')
     var modaloprice = document.createElement('h2')
     var modalsprice = document.createElement('h2')
-    var modallink = document.createElement('h2')
+    // var modallink = document.querySelector('.butBtn')
+    var modalcover = document.createElement("img")
     //what to build
     modalTitle.textContent = value[0].name
     modalpub.textContent = value[0].pub
     modalgenre.textContent = value[0].genre
     modalstudio.textContent = value[0].studio
     modaloprice.textContent = value[0].oprice
-    modalsprice.textContent = value[0].spricename
-    modallink.textContent = value[0].link
+    modalsprice.textContent = value[0].sprice
+    // modallink.setAttribute = (href, value[0].link)
+    modalcover.setAttribute("src", value[0].cover)
     //how to build
     modalInfo.append(modalTitle)
     modalInfo.append(modalpub)
@@ -117,7 +117,8 @@ function populateModal(value) {
     modalInfo.append(modalstudio)
     modalInfo.append(modaloprice)
     modalInfo.append(modalsprice)
-    modalInfo.append(modallink)
+    // modalInfo.append(modallink)
+    modalInfo.append(modalcover)
 }
 
 var btns = document.getElementsByClassName("openmodal");
