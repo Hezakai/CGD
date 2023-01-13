@@ -63,9 +63,14 @@ function populate() {
     for (var i = 0; i < resultsArr.length; i++) {
         var resultTitle = document.createElement("p")
         var resultsPrice = document.createElement("p")
+        var resultoPrice = document.createElement("p")
         var resultsCover = document.createElement("img")
         resultTitle.textContent = resultsArr[i].name
+        resultTitle.setAttribute("class", "resultName")
         resultsPrice.textContent = resultsArr[i].sPrice
+        resultsPrice.setAttribute("class", "resultPrice")
+        resultoPrice.textContent = resultsArr[i].oPrice
+        resultoPrice.setAttribute("class", "resultPrice")
         resultsCover.setAttribute("src", resultsArr[i].cover)
         resultsBox.append(resultTitle,resultsCover,resultsPrice,)
 
