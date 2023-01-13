@@ -26,9 +26,9 @@
             <div class="flex flex-row text-white" id=searchParam>
                 <input type="checkbox" class="mx-2" id="genreChk" name="genreChk" value="genreChk">
                 <label for="genreChk">Genre</label><br>
-                <input type="checkbox" class="mx-2 id=" publisherChk" name="publisherChk" value="publisherChk">
+                <input type="checkbox" class="mx-2" id="publisherChk" name="publisherChk" value="publisherChk">
                 <label for="publisherChk">Publisher</label><br>
-                <input type="checkbox" class="mx-2 id=" studioChk" name="studioChk" value="studioChk">
+                <input type="checkbox" class="mx-2" id="studioChk" name="studioChk" value="studioChk">
                 <label for="etc">Studio</label><br>
             </div>
             <button type="searchBtn"
@@ -36,7 +36,7 @@
                 id="searchBtn">Click To Find Similar Games!</button>
         </div>
         <!-- Results Section -->
-        <div id="resultsBox" class="results-box">
+        <div id="resultsBox" class="results-box text-white">
             <!-- Test Modals -->
             <!-- The Modal -->
             <div class="modal myModal hidden">
@@ -49,14 +49,6 @@
                    <div class="modal-info">
 
                     </div>
-                    <img class="mb-20" id="modalCover" src="" style="width:100%;max-width:200px"><img>
-    
-                    <p id="modalName"></p>
-                    <p id="modalPub"></p>
-                    <p id="modalGenre"></p>
-                    <p id="modalStudio"></p>
-                    <p id="modalOPrice"></p>
-                    <p id="modalSPrice"></p>
 
                     <button
                         class="my-12 h-12 w-24 bg-white text-white rounded-full hover:bg-red-500 hover:text-white"><a
