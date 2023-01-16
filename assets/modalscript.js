@@ -50,10 +50,15 @@ populate()
 function populate() {
 
     for (var i = 0; i < resultsArr.length; i++) {
+        var resultDiv = document.createElement("div")
         var resultTitle = document.createElement("p")
         var resultsPrice = document.createElement("p")
         var resultoPrice = document.createElement("p")
         var resultsCover = document.createElement("img")
+
+        resultDiv.id = "card" + i;
+        resultDiv.setAttribute("class", "resultCard")
+        resultsBox.appendChild(resultDiv)
         resultTitle.textContent = resultsArr[i].name
         resultTitle.setAttribute("class", "resultName")
         resultsPrice.textContent = resultsArr[i].sPrice
@@ -61,7 +66,8 @@ function populate() {
         resultoPrice.textContent = resultsArr[i].oPrice
         resultoPrice.setAttribute("class", "resultPrice")
         resultsCover.setAttribute("src", resultsArr[i].cover)
-        resultsBox.append(resultTitle,resultsCover,resultsPrice,)
+        resultDiv.append(resultTitle,resultsCover,resultsPrice,)
+
 
 
         //event listenr that pulls the game name clicked from the results field
@@ -87,7 +93,6 @@ function populateModal(value) {
 
     //builder variables
     var modalTitle = document.createElement('h2')
-    //TODO ADD MODAL IMG & BUY BTN
     var modalPub = document.createElement('h2')
     var modalGenre = document.createElement('h2')
     var modalStudio = document.createElement('h2')
@@ -95,6 +100,7 @@ function populateModal(value) {
     var modalsPrice = document.createElement('h2')
     var modalLink = document.querySelector('#buyBtn')
     var modalCover = document.createElement("img")
+
     //what to build
     modalTitle.textContent = value[0].name
     modalPub.textContent = value[0].pub
@@ -104,6 +110,7 @@ function populateModal(value) {
     modalsPrice.textContent = value[0].sPrice
     modalLink.setAttribute("href", value[0].link)
     modalCover.setAttribute("src", value[0].cover)
+
     //how to build
     modalInfo.append(modalTitle)
     modalInfo.append(modalPub)
@@ -111,7 +118,6 @@ function populateModal(value) {
     modalInfo.append(modalStudio)
     modalInfo.append(modaloPrice)
     modalInfo.append(modalsPrice)
-    // modalInfo.append(modalLink)
     modalInfo.append(modalCover)
 }
 
