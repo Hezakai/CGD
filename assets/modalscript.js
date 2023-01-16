@@ -5,8 +5,8 @@ var resultsArr = [
         pub: "Borderlands Pub",
         genre: "Borderlands Genre",
         studio: "Borderlands Studio",
-        oPrice: "Borderlands OPrice",
-        sPrice: "Borderlands SPrice",
+        oPrice: "$49.99",
+        sPrice: "$14.99",
         cover: "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Borderlandscover.jpg/220px-Borderlandscover.jpg",
         link: "https://www.cheapshark.com/redirect?dealID=Y3grZU9fHdHkzgjh%2BR8ThjRlw7T6kpDnszM3FwOduLs%3D"
     },
@@ -15,8 +15,8 @@ var resultsArr = [
         pub: "XCOM 2 Pub",
         genre: "XCOM 2 Genre",
         studio: "XCOM 2 Studio",
-        oPrice: "XCOM 2 OPrice",
-        sPrice: "XCOM 2 SPrice",
+        oPrice: "$49.99",
+        sPrice: "$4.99",
         cover: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/XCOM_2_cover_art.jpg/220px-XCOM_2_cover_art.jpg",
         link: "https://www.cheapshark.com/redirect?dealID=IVj099Jarz6odiHw35jmGZyckpjmQeAmYI0%2BFyn8i1A%3D"
     },
@@ -25,8 +25,8 @@ var resultsArr = [
         pub: "Back 4 Blood Pub",
         genre: "Back 4 Blood Genre",
         studio: "Back 4 Blood Studio",
-        oPrice: "Back 4 Blood OPrice",
-        sPrice: "Back 4 Blood SPrice",
+        oPrice: "$49.99",
+        sPrice: "$32.89",
         cover: "https://upload.wikimedia.org/wikipedia/en/thumb/6/60/Back_4_Blood_cover_art.jpg/220px-Back_4_Blood_cover_art.jpg",
         link: "https://www.cheapshark.com/redirect?dealID=https://www.cheapshark.com/redirect?dealID=ESIIJCjm9wUuaO1hhZLZLgd7OS3qorpPmT44E70YSas%3D"
     }
@@ -53,20 +53,20 @@ function populate() {
         var resultDiv = document.createElement("div")
         var resultTitle = document.createElement("p")
         var resultsPrice = document.createElement("p")
-        var resultoPrice = document.createElement("p")
         var resultsCover = document.createElement("img")
 
+        //builds new div
         resultDiv.id = "card" + i;
         resultDiv.setAttribute("class", "resultCard")
+        //div content
         resultsBox.appendChild(resultDiv)
         resultTitle.textContent = resultsArr[i].name
         resultTitle.setAttribute("class", "resultName text-center text-lg mb-3")
         resultsPrice.textContent = resultsArr[i].sPrice
         resultsPrice.setAttribute("class", "resultPrice text-center")
-        resultoPrice.textContent = resultsArr[i].oPrice
-        resultoPrice.setAttribute("class", "resultPrice")
         resultsCover.setAttribute("class", "mx-10 mt-5 mb-3 object-cover h-96 w-64")
         resultsCover.setAttribute("src", resultsArr[i].cover)
+        //adds results to new div
         resultDiv.append(resultsCover,resultTitle,resultsPrice,)
 
 
