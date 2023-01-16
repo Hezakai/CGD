@@ -111,15 +111,16 @@ function populateModal(value) {
     modalsPrice.textContent = value[0].sPrice
     modalLink.setAttribute("href", value[0].link)
     modalCover.setAttribute("src", value[0].cover)
+    modalCover.setAttribute("class", "mb-8")
 
     //how to build
+    modalInfo.append(modalCover)
     modalInfo.append(modalTitle)
     modalInfo.append(modalPub)
     modalInfo.append(modalGenre)
     modalInfo.append(modalStudio)
     modalInfo.append(modaloPrice)
     modalInfo.append(modalsPrice)
-    modalInfo.append(modalCover)
 }
 
 var btns = document.getElementsByClassName("openmodal");
