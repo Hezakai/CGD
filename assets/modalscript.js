@@ -1,14 +1,3 @@
-// constructor function for building modals
-
-// function Modal(Name, Pub, Genre, Studio, OPrice, SPrice) {
-//     this.Pub = pub;
-//     this.Genre = genre;
-//     this.Studio = studio;
-//     this.OPrice = OPrice;
-//     this.SPrice = SPrice;
-//     this.Link = Link;
-//   }
-
 // results array fed by the APIs
 var resultsArr = [
     {
@@ -61,10 +50,15 @@ populate()
 function populate() {
 
     for (var i = 0; i < resultsArr.length; i++) {
+        var resultDiv = document.createElement("div")
         var resultTitle = document.createElement("p")
         var resultsPrice = document.createElement("p")
         var resultoPrice = document.createElement("p")
         var resultsCover = document.createElement("img")
+
+        resultDiv.id = "card" + i;
+        resultDiv.setAttribute("class", "resultCard")
+        resultsBox.appendChild(resultDiv)
         resultTitle.textContent = resultsArr[i].name
         resultTitle.setAttribute("class", "resultName")
         resultsPrice.textContent = resultsArr[i].sPrice
@@ -72,7 +66,8 @@ function populate() {
         resultoPrice.textContent = resultsArr[i].oPrice
         resultoPrice.setAttribute("class", "resultPrice")
         resultsCover.setAttribute("src", resultsArr[i].cover)
-        resultsBox.append(resultTitle,resultsCover,resultsPrice,)
+        resultDiv.append(resultTitle,resultsCover,resultsPrice,)
+
 
 
         //event listenr that pulls the game name clicked from the results field
@@ -98,32 +93,32 @@ function populateModal(value) {
 
     //builder variables
     var modalTitle = document.createElement('h2')
-    //TODO ADD MODAL IMG & BUY BTN
-    var modalpub = document.createElement('h2')
-    var modalgenre = document.createElement('h2')
-    var modalstudio = document.createElement('h2')
-    var modaloprice = document.createElement('h2')
-    var modalsprice = document.createElement('h2')
-    // var modallink = document.querySelector('.butBtn')
-    var modalcover = document.createElement("img")
+    var modalPub = document.createElement('h2')
+    var modalGenre = document.createElement('h2')
+    var modalStudio = document.createElement('h2')
+    var modaloPrice = document.createElement('h2')
+    var modalsPrice = document.createElement('h2')
+    var modalLink = document.querySelector('#buyBtn')
+    var modalCover = document.createElement("img")
+
     //what to build
     modalTitle.textContent = value[0].name
-    modalpub.textContent = value[0].pub
-    modalgenre.textContent = value[0].genre
-    modalstudio.textContent = value[0].studio
-    modaloprice.textContent = value[0].oprice
-    modalsprice.textContent = value[0].sprice
-    // modallink.setAttribute = (href, value[0].link)
-    modalcover.setAttribute("src", value[0].cover)
+    modalPub.textContent = value[0].pub
+    modalGenre.textContent = value[0].genre
+    modalStudio.textContent = value[0].studio
+    modaloPrice.textContent = value[0].oPrice
+    modalsPrice.textContent = value[0].sPrice
+    modalLink.setAttribute("href", value[0].link)
+    modalCover.setAttribute("src", value[0].cover)
+
     //how to build
     modalInfo.append(modalTitle)
-    modalInfo.append(modalpub)
-    modalInfo.append(modalgenre)
-    modalInfo.append(modalstudio)
-    modalInfo.append(modaloprice)
-    modalInfo.append(modalsprice)
-    // modalInfo.append(modallink)
-    modalInfo.append(modalcover)
+    modalInfo.append(modalPub)
+    modalInfo.append(modalGenre)
+    modalInfo.append(modalStudio)
+    modalInfo.append(modaloPrice)
+    modalInfo.append(modalsPrice)
+    modalInfo.append(modalCover)
 }
 
 var btns = document.getElementsByClassName("openmodal");
