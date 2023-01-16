@@ -1,14 +1,3 @@
-// constructor function for building modals
-
-// function Modal(Name, Pub, Genre, Studio, OPrice, SPrice) {
-//     this.Pub = pub;
-//     this.Genre = genre;
-//     this.Studio = studio;
-//     this.OPrice = OPrice;
-//     this.SPrice = SPrice;
-//     this.Link = Link;
-//   }
-
 // results array fed by the APIs
 var resultsArr = [
     {
@@ -99,31 +88,31 @@ function populateModal(value) {
     //builder variables
     var modalTitle = document.createElement('h2')
     //TODO ADD MODAL IMG & BUY BTN
-    var modalpub = document.createElement('h2')
-    var modalgenre = document.createElement('h2')
-    var modalstudio = document.createElement('h2')
-    var modaloprice = document.createElement('h2')
-    var modalsprice = document.createElement('h2')
+    var modalPub = document.createElement('h2')
+    var modalGenre = document.createElement('h2')
+    var modalStudio = document.createElement('h2')
+    var modaloPrice = document.createElement('h2')
+    var modalsPrice = document.createElement('h2')
     // var modallink = document.querySelector('.butBtn')
-    var modalcover = document.createElement("img")
+    var modalCover = document.createElement("img")
     //what to build
     modalTitle.textContent = value[0].name
-    modalpub.textContent = value[0].pub
-    modalgenre.textContent = value[0].genre
-    modalstudio.textContent = value[0].studio
-    modaloprice.textContent = value[0].oprice
-    modalsprice.textContent = value[0].sprice
+    modalPub.textContent = value[0].pub
+    modalGenre.textContent = value[0].genre
+    modalStudio.textContent = value[0].studio
+    modaloPrice.textContent = value[0].oPrice
+    modalsPrice.textContent = value[0].sPrice
     // modallink.setAttribute = (href, value[0].link)
-    modalcover.setAttribute("src", value[0].cover)
+    modalCover.setAttribute("src", value[0].cover)
     //how to build
     modalInfo.append(modalTitle)
-    modalInfo.append(modalpub)
-    modalInfo.append(modalgenre)
-    modalInfo.append(modalstudio)
-    modalInfo.append(modaloprice)
-    modalInfo.append(modalsprice)
+    modalInfo.append(modalPub)
+    modalInfo.append(modalGenre)
+    modalInfo.append(modalStudio)
+    modalInfo.append(modaloPrice)
+    modalInfo.append(modalsPrice)
     // modalInfo.append(modallink)
-    modalInfo.append(modalcover)
+    modalInfo.append(modalCover)
 }
 
 var btns = document.getElementsByClassName("openmodal");
