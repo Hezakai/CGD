@@ -93,7 +93,7 @@ function populateModal(value) {
     var modalStudio = document.createElement('h2')
     var modaloPrice = document.createElement('h2')
     var modalsPrice = document.createElement('h2')
-    // var modallink = document.querySelector('.butBtn')
+    var modalLink = document.querySelector('#buyBtn')
     var modalCover = document.createElement("img")
     //what to build
     modalTitle.textContent = value[0].name
@@ -102,7 +102,7 @@ function populateModal(value) {
     modalStudio.textContent = value[0].studio
     modaloPrice.textContent = value[0].oPrice
     modalsPrice.textContent = value[0].sPrice
-    // modallink.setAttribute = (href, value[0].link)
+    modalLink.setAttribute("href", value[0].link)
     modalCover.setAttribute("src", value[0].cover)
     //how to build
     modalInfo.append(modalTitle)
@@ -111,7 +111,7 @@ function populateModal(value) {
     modalInfo.append(modalStudio)
     modalInfo.append(modaloPrice)
     modalInfo.append(modalsPrice)
-    // modalInfo.append(modallink)
+    // modalInfo.append(modalLink)
     modalInfo.append(modalCover)
 }
 
