@@ -60,13 +60,14 @@ function populate() {
         resultDiv.setAttribute("class", "resultCard")
         resultsBox.appendChild(resultDiv)
         resultTitle.textContent = resultsArr[i].name
-        resultTitle.setAttribute("class", "resultName")
+        resultTitle.setAttribute("class", "resultName text-center text-lg mb-3")
         resultsPrice.textContent = resultsArr[i].sPrice
-        resultsPrice.setAttribute("class", "resultPrice")
+        resultsPrice.setAttribute("class", "resultPrice text-center")
         resultoPrice.textContent = resultsArr[i].oPrice
         resultoPrice.setAttribute("class", "resultPrice")
+        resultsCover.setAttribute("class", "mx-10 mt-5 mb-3 object-cover h-96 w-64")
         resultsCover.setAttribute("src", resultsArr[i].cover)
-        resultDiv.append(resultTitle,resultsCover,resultsPrice,)
+        resultDiv.append(resultsCover,resultTitle,resultsPrice,)
 
 
 
