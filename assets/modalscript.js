@@ -44,7 +44,7 @@ closeModal.addEventListener('click', function () {
     modals[0].classList.remove('show')
 })
 
-populate()
+// populate()
 
 //populates the result field from results array
 function populate() {
@@ -56,7 +56,8 @@ function populate() {
         var resultsCover = document.createElement("img")
 
         //builds new div
-        resultDiv.id = "card" + i;
+        // resultDiv.id = "card" + i;
+        resultDiv.setAttribute("id", "card" + i)
         resultDiv.setAttribute("class", "resultCard")
         //div content
         resultsBox.appendChild(resultDiv)
@@ -76,8 +77,6 @@ function populate() {
             var clicked = event.target.textContent
 
             var clickedObjectData = resultsArr.filter(item => item.name === clicked)
-
-            console.log(clickedObjectData)
 
             populateModal(clickedObjectData)
         })
@@ -104,11 +103,11 @@ function populateModal(value) {
 
     //what to build
     modalTitle.textContent = value[0].name
-    modalPub.textContent = value[0].pub
-    modalGenre.textContent = value[0].genre
-    modalStudio.textContent = value[0].studio
-    modaloPrice.textContent = value[0].oPrice
-    modalsPrice.textContent = value[0].sPrice
+    modalPub.textContent = "Publisher: " + value[0].pub
+    modalGenre.textContent = "Genre: " + value[0].genre
+    modalStudio.textContent = "Studio: " + value[0].studio
+    modaloPrice.textContent = "Original Price: " + value[0].oPrice
+    modalsPrice.textContent = "Sale Price: " + value[0].sPrice
     modalLink.setAttribute("href", value[0].link)
     modalCover.setAttribute("src", value[0].cover)
     modalCover.setAttribute("class", "mb-8")

@@ -24,13 +24,42 @@
             <!-- <h1>Enter Game Name</h1> -->
             <input type="text" id="searchInput" class="text-center bg-slate-600 my-4"
                 placeholder="Enter Game Name"></input>
-            <button type="searchBtn"
+            <button onclick="initSearch()" type="searchBtn"
                 class="m-5 p-3 px-6 pt-2 text-white bg-slate-800 rounded-full baseline hover:bg-red-500"
                 id="searchBtn">Click To Find Similar Games On Sale!</button>
         </div>
         <!-- Results Section -->
         <div id="resultsBox" class="results-box text-white flex flex-row">
-            <!-- Test Modals -->
+            <div id="gameName">Borderlands</div>
+            <!-- faded/transparent -->
+            <img src="https://media.rawg.io/media/resize/200/-/screenshots/0ff/0ff49e4706886baf6150990d408a6473.jpg" id="backgroundImg"></div>
+            <!-- box holding screenshot thumbnails -->
+            <div id="screenshotBox"></div>
+                <img src="https://media.rawg.io/media/resize/200/-/screenshots/669/6693c7ffd9e40cc380ce2dc1c7b2d518.jpg" id="screenshotThumb1"></div>
+                <img src="https://media.rawg.io/media/resize/200/-/screenshots/2cf/2cffe85c573b796a8071785a4c4f8847.jpg" id="screenshotThumb1"></div>
+                <img src="https://media.rawg.io/media/resize/200/-/screenshots/6b9/6b9a7c76321e944bc2af8ca8b064e0d4.jpg" id="screenshotThumb1"></div>
+                <img src="https://media.rawg.io/media/resize/200/-/screenshots/3e8/3e8622a82c5c4fd1b7b33afa6e574fa3.jpg" id="screenshotThumb1"></div>
+                <img src="https://media.rawg.io/media/resize/200/-/screenshots/4b5/4b5822145ddce0cfe3331a9fd8c0d60d.jpg" id="screenshotThumb1"></div>
+                <img src="https://media.rawg.io/media/resize/200/-/screenshots/2a7/2a73260cc01ba41457f7a709490fcd36.jpg" id="screenshotThumb1"></div>
+            </div>
+            <!-- vidoeplayer -->
+            <video id="gameplayVideo>
+                <source src=https://media.rawg.io/media/stories/bf6/bf65a6f245f3e4ea2b41563ec17ff8c9.mp4 type="video/mp4">
+              </video>
+            <div id="description">Pandora is a dangerous planet, so it makes sense that the strongest people will dominate it. 4 Vault Hunters arrive to find the legendary Vault found themselves at the Fyrestone, where mysterious girl only known as Angel guides them, helping to build the reputation of problem solvers. Eventually, players will be tasked to find the first piece, of the Vault Key.
+                By being a story-driven first-person shooter with RPG elements, Borderlands allows adjusting the playstyle by finding different weapons, leveling up the character and improving some skills or attributes. Cooperative in nature, Borderlands can be played with up to 3 other players in total, where players can take the roles of 4 different characters: Brick the Berserker, Mordecai the Hunter, Lilith the Siren and Roland the Soldier. Some characters are naturally proficient in specific weapons, but players are not constricted to the skill requirements. When a specific weapon type is used often – the more proficient players are. Borderlands have several story DLCs that either shift the tone of the main game or expand on the existing storyline and characters.</div>
+            <div id="releaseDate">Oct 20, 2009</div>
+            <div id="pub">2K</div>
+            <div id="studio">Gearbox Software</div>
+            <div id="metascore">81
+            </div>
+            <div id="ratingUSER">*****</div>
+            <div id="ratingESRB">18+ Adults Only</div>
+            <div id="genre">Action, Shooter, RPG</div>
+            <div id="platforms">Xbox 360, PlayStation 3, Xbox One, Nintendo Switch, PC</div>
+            <div id="tags">Singleplayer, Steam Achievements, Multiplayer, Steam Cloud, RPG, Co-op, Open World, cooperative, First-Person, Sci-fi, Partial Controller Support, FPS, Online Co-Op, Funny, Gore, Comedy, Local Co-Op, Action RPG, Post-apocalyptic, Dark Humor, Loot</div>
+            <div id="sales">salePrice:"9.89"
+                normalPrice:"29.99" "Y3grZU9fHdHkzgjh%2BR8ThjRlw7T6kpDnszM3FwOduLs%3D"</div>
             <!-- The Modal -->
             <div class="modal myModal hidden">
 
@@ -61,6 +90,7 @@
     <script src="./assets/modalscript.js"></script>
     <script src="./assets/rawgscript.js"></script>
     <script src="./assets/cheapsharkscript.js"></script>
+    <script src="./assets/sfb.js"></script>
 </body>
 
 </html>
