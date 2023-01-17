@@ -3,139 +3,156 @@
 <!--Document Head - sets the meta data and links to CDN/other assets-->
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!--Links the CSS sheet located in the assets folder-->
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="./assets/slideshow.css">
-    <!-- This sets the title displayed in the browser tab -->
-    <title>Cheap Game Deals</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!--Links the CSS sheet located in the assets folder-->
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/slideshow.css">
+  <!-- This sets the title displayed in the browser tab -->
+  <title>Cheap Game Deals</title>
 </head>
 
 <body class="bg-gray-900">
-    <header class="my-5 text-8xl text-white">
-        <h1>Cheap Game Deals</h1>
-    </header>
-    <main>
-        <!-- Search Section -->
-        <div class="flex flex-col justify-center items-center p-4 m-4" id="searchBar">
-            <!-- <h1>Enter Game Name</h1> -->
-            <input type="text" id="searchInput" class="text-center bg-slate-600 my-4"
-                placeholder="Enter Game Name"></input>
-            <button onclick="initSearch()" type="searchBtn"
-                class="m-5 p-3 px-6 pt-2 text-white bg-slate-800 rounded-full baseline hover:bg-red-500"
-                id="searchBtn">Click To Find Similar Games On Sale!</button>
+  <header class="my-5 text-8xl text-white">
+    <h1>Cheap Game Deals</h1>
+  </header>
+  <main>
+    <!-- Search Section -->
+    <div class="flex flex-col justify-center items-center p-4 m-4" id="searchBar">
+      <!-- <h1>Enter Game Name</h1> -->
+      <input type="text" id="searchInput" class="text-center bg-slate-600 my-4" placeholder="Enter Game Name"></input>
+      <button onclick="initSearch()" type="searchBtn"
+        class="m-5 p-3 px-6 pt-2 text-white bg-slate-800 rounded-full baseline hover:bg-red-500" id="searchBtn">Click To
+        Find Similar Games On Sale!</button>
+    </div>
+    <!-- Results Section -->
+    <div id="resultsBox" class="results-box m-4 text-white flex flex-col lg:flex-row">
+      <!-- Slideshow container -->
+      <div class="slideshow flex flex-col m-5 grow">
+        <div id="gameName" class="text-6xl">Borderlands</div>
+        <div class="slideshow-container mt-4 max-w-full">
+
+          <!-- Full-width images with number and caption text -->
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 7</div>
+            <img class=""
+              src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/04/borderlands-goty-cover.jpg"
+              id="backgroundImg">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 7</div>
+            <video width="1920" height="1080" controls muted id="gameplayVideo">
+              <source src=https://media.rawg.io/media/stories/bf6/bf65a6f245f3e4ea2b41563ec17ff8c9.mp4 type="video/mp4">
+            </video>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 7</div>
+            <img src="https://media.rawg.io/media/resize/1920/-/screenshots/6b9/6b9a7c76321e944bc2af8ca8b064e0d4.jpg"
+              style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">4 / 7</div>
+            <img src="https://media.rawg.io/media/resize/1920/-/screenshots/3e8/3e8622a82c5c4fd1b7b33afa6e574fa3.jpg"
+              style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">5 / 7</div>
+            <img src="https://media.rawg.io/media/resize/1920/-/screenshots/4b5/4b5822145ddce0cfe3331a9fd8c0d60d.jpg"
+              style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">6 / 7</div>
+            <img src="https://media.rawg.io/media/resize/1920/-/screenshots/2a7/2a73260cc01ba41457f7a709490fcd36.jpg"
+              style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">7 / 7</div>
+            <img src="https://media.rawg.io/media/resize/1920/-/screenshots/153/153b36d06eaa5a3ff45cea30a572a169.jpg"
+              style="width:100%">
+          </div>
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          <div class="text-center m-4">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+          </div>
         </div>
-        <!-- Results Section -->
-        <div id="resultsBox" class="results-box m-4 text-white flex flex-col lg:flex-row">
-            <!-- Slideshow container -->
-    <div class="slideshow flex flex-col m-5 grow">
-    <div id="gameName" class="text-6xl">Borderlands</div>
-    <div class="slideshow-container mt-4 max-w-full">
-    
-    <!-- Full-width images with number and caption text -->
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 7</div>
-      <img class="" src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/04/borderlands-goty-cover.jpg" id="backgroundImg">
-    </div>
-  
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 7</div>
-      <video width="1920" height="1080" controls muted id="gameplayVideo">
-        <source src=https://media.rawg.io/media/stories/bf6/bf65a6f245f3e4ea2b41563ec17ff8c9.mp4 type="video/mp4">
-      </video>
-    </div>
-  
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 7</div>
-      <img src="https://media.rawg.io/media/resize/1920/-/screenshots/6b9/6b9a7c76321e944bc2af8ca8b064e0d4.jpg" style="width:100%">
-    </div>
-  
-    <div class="mySlides fade">
-        <div class="numbertext">4 / 7</div>
-        <img src="https://media.rawg.io/media/resize/1920/-/screenshots/3e8/3e8622a82c5c4fd1b7b33afa6e574fa3.jpg" style="width:100%">
       </div>
-
-      <div class="mySlides fade">
-        <div class="numbertext">5 / 7</div>
-        <img src="https://media.rawg.io/media/resize/1920/-/screenshots/4b5/4b5822145ddce0cfe3331a9fd8c0d60d.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides fade">
-        <div class="numbertext">6 / 7</div>
-        <img src="https://media.rawg.io/media/resize/1920/-/screenshots/2a7/2a73260cc01ba41457f7a709490fcd36.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides fade">
-        <div class="numbertext">7 / 7</div>
-        <img src="https://media.rawg.io/media/resize/1920/-/screenshots/153/153b36d06eaa5a3ff45cea30a572a169.jpg" style="width:100%">
-      </div>
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-    <div class="text-center m-4">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
-        <span class="dot" onclick="currentSlide(6)"></span>
-      </div>
-    </div>
-    </div>
-<div class="flex flex-col lg:mt-24 self-stretch">
-    <div id="description">Pandora is a dangerous planet, so it makes sense that the strongest people will dominate it. 4 Vault Hunters arrive to find the legendary Vault found themselves at the Fyrestone, where mysterious girl only known as Angel guides them, helping to build the reputation of problem solvers. Eventually, players will be tasked to find the first piece, of the Vault Key.
-        By being a story-driven first-person shooter with RPG elements, Borderlands allows adjusting the playstyle by finding different weapons, leveling up the character and improving some skills or attributes. Cooperative in nature, Borderlands can be played with up to 3 other players in total, where players can take the roles of 4 different characters: Brick the Berserker, Mordecai the Hunter, Lilith the Siren and Roland the Soldier. Some characters are naturally proficient in specific weapons, but players are not constricted to the skill requirements. When a specific weapon type is used often – the more proficient players are. Borderlands have several story DLCs that either shift the tone of the main game or expand on the existing storyline and characters.</div>
-    <div id="releaseDate">Oct 20, 2009</div>
-    <div id="pub">2K</div>
-    <div id="studio">Gearbox Software</div>
-    <div id="metascore">81
-    </div>
-    <div id="ratingUSER">*****</div>
-    <div id="ratingESRB">18+ Adults Only</div>
-    <div id="genre">Action, Shooter, RPG</div>
-    <div id="platforms">Xbox 360, PlayStation 3, Xbox One, Nintendo Switch, PC</div>
-    <div id="tags">Singleplayer, Steam Achievements, Multiplayer, Steam Cloud, RPG, Co-op, Open World, cooperative, First-Person, Sci-fi, Partial Controller Support, FPS, Online Co-Op, Funny, Gore, Comedy, Local Co-Op, Action RPG, Post-apocalyptic, Dark Humor, Loot</div>
-    <div id="sales">salePrice:"9.89"
-        normalPrice:"29.99" "Y3grZU9fHdHkzgjh%2BR8ThjRlw7T6kpDnszM3FwOduLs%3D"</div>
-</div>
-</div>
-
-              <section class="flex flex-col w-96 text-white ">
-           
-            </section>
-            <!-- The Modal -->
-            <div class="modal myModal hidden">
-            <!-- Modal content -->
-            <div class="modal-content bg-gray-800 flex-col items-center text-white">
-                <span class="close self-end ">&times;</span>
-
-
-                <div class="modal-info text-center"></div>
-
-
-                <button class="my-12 h-12 w-24 bg-black text-white rounded-full hover:bg-red-500 hover:text-white"><a
-                        id="buyBtn" href="">Buy Now!</a></button>
-            </div>
+      <div class="flex flex-col lg:mt-24 self-stretch">
+        <div id="description">Pandora is a dangerous planet, so it makes sense that the strongest people will dominate
+          it. 4 Vault Hunters arrive to find the legendary Vault found themselves at the Fyrestone, where mysterious
+          girl only known as Angel guides them, helping to build the reputation of problem solvers. Eventually, players
+          will be tasked to find the first piece, of the Vault Key.
+          By being a story-driven first-person shooter with RPG elements, Borderlands allows adjusting the playstyle by
+          finding different weapons, leveling up the character and improving some skills or attributes. Cooperative in
+          nature, Borderlands can be played with up to 3 other players in total, where players can take the roles of 4
+          different characters: Brick the Berserker, Mordecai the Hunter, Lilith the Siren and Roland the Soldier. Some
+          characters are naturally proficient in specific weapons, but players are not constricted to the skill
+          requirements. When a specific weapon type is used often – the more proficient players are. Borderlands have
+          several story DLCs that either shift the tone of the main game or expand on the existing storyline and
+          characters.</div>
+        <div id="releaseDate">Oct 20, 2009</div>
+        <div id="pub">2K</div>
+        <div id="studio">Gearbox Software</div>
+        <div id="metascore">81
         </div>
-        <button class="openmodal myBtn text-white ml-2 my-2 hover:text-gray-500" id="modalBtn"></button>
-        </div>
+        <div id="ratingUSER">*****</div>
+        <div id="ratingESRB">18+ Adults Only</div>
+        <div id="genre">Action, Shooter, RPG</div>
+        <div id="platforms">Xbox 360, PlayStation 3, Xbox One, Nintendo Switch, PC</div>
+        <div id="tags">Singleplayer, Steam Achievements, Multiplayer, Steam Cloud, RPG, Co-op, Open World, cooperative,
+          First-Person, Sci-fi, Partial Controller Support, FPS, Online Co-Op, Funny, Gore, Comedy, Local Co-Op, Action
+          RPG, Post-apocalyptic, Dark Humor, Loot</div>
+        <button id="sales">Click Here For Sales</button>
+      </div>
+    </div>
 
-        </div>
-    </main>
-    <footer class="text-white">2022 Cheap Game Deals©</footer>
-    <!--uncompressed jQuery CDN-->
-    <script src="https://code.jquery.com/jquery-3.6.3.js"
-        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-    <!--links to the JS file in the assets folder-->
-    <script src="./assets/modalscript.js"></script>
-    <script src="./assets/rawgscript.js"></script>
-    <script src="./assets/cheapsharkscript.js"></script>
-    <script src="./assets/slideshow.js"></script>
+    <section class="flex flex-col w-96 text-white ">
+
+    </section>
+    <!-- The Modal -->
+    <div class="modal myModal hidden">
+      <!-- Modal content -->
+      <div class="modal-content bg-gray-800 flex-col items-center text-white">
+        <span class="close self-end ">&times;</span>
+
+
+        <div id="modalContent" class="modal-info text-center">Click Here for Deals</div>
+
+
+        <button class="my-12 h-12 w-24 bg-black text-white rounded-full hover:bg-red-500 hover:text-white"><a
+            id="buyBtn" href="">Buy Now!</a></button>
+      </div>
+    </div>
+    <button class="openmodal myBtn text-white ml-2 my-2 hover:text-gray-500" id="modalBtn"></button>
+    </div>
+
+    </div>
+  </main>
+  <footer class="text-white">2022 Cheap Game Deals©</footer>
+  <!--uncompressed jQuery CDN-->
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+  <!--links to the JS file in the assets folder-->
+
+  <!-- <script src="./assets/rawgscript.js"></script> -->
+  <script src="./assets/cheapsharkscript.js"></script>
+  <script src="./assets/slideshow.js"></script>
 </body>
 
 </html>
