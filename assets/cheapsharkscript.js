@@ -15,19 +15,11 @@ var apiResponse
 //steam is store 0 or 1
 
 function getGameID() {
-	for (let i = 0; i < titleArr.length; i++) {
-		fetch('https://cheapshark-game-deals.p.rapidapi.com/deals?title='+ titleArr[i] + '&exact=1&output=json&sortBy=Price&onSale=true', options)
-		.then(response => response.json()) 
-		// push this into an array
-		.then(response => console.log(response[0].dealID + " " + response[0].normalPrice + " " + response[0].salePrice))
-		.catch(err => console.error(err));
-	}
+fetch('https://cheapshark-game-deals.p.rapidapi.com/deals?title='+ titleArr + '&exact=1&output=json&sortBy=Deal%20Rating&pageSize=10&onSale=true', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
 }
 
 getGameID()
-
-// fetch('https://cheapshark-game-deals.p.rapidapi.com/deals?title=borderlands 2&exact=1&output=json&sortBy=Deal%20Rating&pageSize=10&onSale=true', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
 
