@@ -16,6 +16,7 @@ var requestOptions ={
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 
+
     var titleArr=["kandria"]
 
     function getGameID() {
@@ -33,3 +34,4 @@ var requestOptions ={
     
     
     getGameID();
+
