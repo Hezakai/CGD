@@ -1,6 +1,6 @@
 # Cheap Game Deals
 
-In this website you will be able to look up your favorite games and get similar games based off its genres as well as the cheapest options and locations to buy those games!
+In this website you will be able to look up your favorite games and get similar games for the lowest price possible.
 
 
 
@@ -12,3 +12,13 @@ The API's used to bring you this project is all thanks to the teams at:
 
 RAWG = https://rawg.io/apidocs
 CheapShark = https://apidocs.cheapshark.com/
+
+# Project's screenshot
+
+
+
+
+
+
+# Page Link
+CheapGameDeals = http://127.0.0.1:5500/CGD/index.html
