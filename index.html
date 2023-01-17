@@ -3,16 +3,16 @@
 <!--Document Head - sets the meta data and links to CDN/other assets-->
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!--Links the CSS sheet located in the assets folder-->
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="./assets/slideshow.css">
-    <!-- This sets the title displayed in the browser tab -->
-    <title>Cheap Game Deals</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!--Links the CSS sheet located in the assets folder-->
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/slideshow.css">
+  <!-- This sets the title displayed in the browser tab -->
+  <title>Cheap Game Deals</title>
 </head>
 
 <body class="bg-gray-900">
@@ -73,19 +73,51 @@
         <div class="numbertext">7 / 7</div>
         <img id="screenshot5" src="https://media.rawg.io/media/resize/1920/-/screenshots/153/153b36d06eaa5a3ff45cea30a572a169.jpg" style="width:100%">
       </div>
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-    <div class="text-center m-4">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
-        <span class="dot" onclick="currentSlide(6)"></span>
+      <div class="flex flex-col lg:mt-24 self-stretch">
+        <div id="description">Pandora is a dangerous planet, so it makes sense that the strongest people will dominate
+          it. 4 Vault Hunters arrive to find the legendary Vault found themselves at the Fyrestone, where mysterious
+          girl only known as Angel guides them, helping to build the reputation of problem solvers. Eventually, players
+          will be tasked to find the first piece, of the Vault Key.
+          By being a story-driven first-person shooter with RPG elements, Borderlands allows adjusting the playstyle by
+          finding different weapons, leveling up the character and improving some skills or attributes. Cooperative in
+          nature, Borderlands can be played with up to 3 other players in total, where players can take the roles of 4
+          different characters: Brick the Berserker, Mordecai the Hunter, Lilith the Siren and Roland the Soldier. Some
+          characters are naturally proficient in specific weapons, but players are not constricted to the skill
+          requirements. When a specific weapon type is used often – the more proficient players are. Borderlands have
+          several story DLCs that either shift the tone of the main game or expand on the existing storyline and
+          characters.</div>
+        <div id="releaseDate">Oct 20, 2009</div>
+        <div id="pub">2K</div>
+        <div id="studio">Gearbox Software</div>
+        <div id="metascore">81
+        </div>
+        <div id="ratingUSER">*****</div>
+        <div id="ratingESRB">18+ Adults Only</div>
+        <div id="genre">Action, Shooter, RPG</div>
+        <div id="platforms">Xbox 360, PlayStation 3, Xbox One, Nintendo Switch, PC</div>
+        <div id="tags">Singleplayer, Steam Achievements, Multiplayer, Steam Cloud, RPG, Co-op, Open World, cooperative,
+          First-Person, Sci-fi, Partial Controller Support, FPS, Online Co-Op, Funny, Gore, Comedy, Local Co-Op, Action
+          RPG, Post-apocalyptic, Dark Humor, Loot</div>
+        <button id="sales">Click Here For Sales</button>
       </div>
     </div>
+
+    <section class="flex flex-col w-96 text-white ">
+
+    </section>
+    <!-- The Modal -->
+    <div class="modal myModal hidden">
+      <!-- Modal content -->
+      <div class="modal-content bg-gray-800 flex-col items-center text-white">
+        <span class="close self-end ">&times;</span>
+
+
+        <div id="modalContent" class="modal-info text-center">Click Here for Deals</div>
+
+
+        <button class="my-12 h-12 w-24 bg-black text-white rounded-full hover:bg-red-500 hover:text-white"><a
+            id="buyBtn" href="">Buy Now!</a></button>
+      </div>
     </div>
 <div class="flex flex-col lg:mt-24 self-stretch">
     <div id="description">Pandora is a dangerous planet, so it makes sense that the strongest people will dominate it. 4 Vault Hunters arrive to find the legendary Vault found themselves at the Fyrestone, where mysterious girl only known as Angel guides them, helping to build the reputation of problem solvers. Eventually, players will be tasked to find the first piece, of the Vault Key.

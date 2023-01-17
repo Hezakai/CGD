@@ -1,49 +1,81 @@
+let gameID = ""
+var dealsArr = []
+var btnResponse = "Borderlands 2"
+var modals = document.getElementsByClassName('modal');
+var closeModal = document.querySelector('.close')
+var modalInfo = document.querySelector('.modal-info')
+var btns = document.getElementsByClassName("openmodal");
 var keyArr = ['2ca9e05eb2mshaad55f69b7a7e24p152fdajsn1f4c0544ad64',
-'4ccb3e3c17msh9382fa8db07b55cp1aab70jsn6a45fceb609a','eaaa813926msh7bc3448e9439517p1e2fffjsn1e58d3a059e7']
-
-var requestOptions ={
-    method: 'GET',
-    redirect: 'follow',
-    headers: {
-      'X-RapidAPI-Key': keyArr[1],
-      'X-RapidAPI-Host': 'cheapshark-game-deals.p.rapidapi.com'
-    }
+  '4ccb3e3c17msh9382fa8db07b55cp1aab70jsn6a45fceb609a', 'eaaa813926msh7bc3448e9439517p1e2fffjsn1e58d3a059e7']
+var requestOptions = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': keyArr[1],
+    'X-RapidAPI-Host': 'cheapshark-game-deals.p.rapidapi.com'
+  }
 };
 
+//gets the cheapshark ID of the game to better search for that specific game and then calls fetchGameInfo
+function fetchID() {
+  fetch('https://cheapshark-game-deals.p.rapidapi.com/deals?lowerPrice=0&steamRating=0&title=' + btnResponse + '&sortBy=title&pageSize=3&exact=true', requestOptions)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      gameID = data[0].gameID
+      fetchGameInfo(gameID)
+    });
+}
 
-  fetch("https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+//uses the cheapshark ID to pull all stores with the game for sale
+function fetchGameInfo(value) {
+  fetch('https://cheapshark-game-deals.p.rapidapi.com/games?id=' + value, requestOptions)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log("fetchGameInfo data:")
+      dealsArr = data.deals
+      console.log(dealsArr)
+      for (let zx = 0; zx < dealsArr.length; zx++) {
+        console.log(dealsArr[zx])
+        var dealDiv = document.createElement("div")
+        var dealLink = document.createElement("p")
+        var dealStore = document.createElement("p")
+        var dealOPrice = document.createElement("p")
+        var dealSPrice = document.createElement("p")
 
-    // <<<<<<< stupidfuckingbutton
-    function getGameID() {
-    fetch('https://cheapshark-game-deals.p.rapidapi.com/deals?title='+ titleArr + '&exact=1&output=json&sortBy=Deal%20Rating&pageSize=10&onSale=true', options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
-    }
-    
-    getGameID()
-    
-    // =======
+        dealLink.textContent = dealsArr[zx].dealID
+        dealStore.textContent = dealsArr[zx].storeID
+        dealOPrice.textContent = dealsArr[zx].retailPrice
+        dealSPrice.textContent = dealsArr[zx].price
+        //builds new div
+        dealDiv.setAttribute("id", "sale" + zx)
+        dealDiv.setAttribute("class", "deal")
 
-    var titleArr=["kandria"]
-
-    function getGameID() {
-      for (let i = 0; i < titleArr.length; i++) {
-        fetch('https://cheapshark-game-deals.p.rapidapi.com/deals?title='+ titleArr[i] + '&exact=1&output=json&sortBy=Price&onSale=true', requestOptions)
-        .then(response => response.json())
-        .then(response => { 
-          console.log(response)
-          console.log(response[0].dealID + " " + response[0].normalPrice + " " + response[0].salePrice)
-          
-        })
-        
-        .catch(err => console.error(err));
+        modalContent.appendChild(dealDiv)
+        //adds results to new div
+        dealDiv.append(dealLink, dealStore, dealOPrice, dealSPrice)
       }
-    }
-    
-    
-    getGameID();
+    });
 
+}
+
+//function called when Button Clicked
+function initSearch() {
+  let input = document.getElementById("searchInput").value;
+  btnResponse = input;
+  fetchID()
+}
+
+//X to close
+closeModal.addEventListener('click', function () {
+  modals[0].classList.add('hidden')
+  modals[0].classList.remove('show')
+})
+
+//event listener for sales button
+sales.addEventListener('click', function (event) {
+  modals[0].classList.remove('hidden')
+  modals[0].classList.add('show')
+})
