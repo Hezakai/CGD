@@ -16,6 +16,17 @@ var requestOptions ={
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 
+    // <<<<<<< stupidfuckingbutton
+    function getGameID() {
+    fetch('https://cheapshark-game-deals.p.rapidapi.com/deals?title='+ titleArr + '&exact=1&output=json&sortBy=Deal%20Rating&pageSize=10&onSale=true', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+    }
+    
+    getGameID()
+    
+    // =======
 
     var titleArr=["kandria"]
 
@@ -26,6 +37,7 @@ var requestOptions ={
         .then(response => { 
           console.log(response)
           console.log(response[0].dealID + " " + response[0].normalPrice + " " + response[0].salePrice)
+          
         })
         
         .catch(err => console.error(err));
