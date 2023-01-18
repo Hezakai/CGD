@@ -391,10 +391,6 @@ function fetchGameInfo(value) {
       dealsArr = data.deals
       //clears any perviously generated modal content
       modalContent.innerHTML = "";
-      var modalBanner = document.createElement("h1")
-      modalBanner.setAttribute("class", "my-5 text-6xl text-white")
-      modalBanner.textContent = "Online Retailers"
-      modalContent.append(modalBanner)
       //modal builder
       for (let zx = 0; zx < dealsArr.length; zx++) {
         var dealDiv = document.createElement("div")
