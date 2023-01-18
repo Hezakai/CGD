@@ -394,7 +394,7 @@ function fetchGameInfo(value) {
       //modal builder
       for (let zx = 0; zx < dealsArr.length; zx++) {
         var dealDiv = document.createElement("div")
-        var buyBtn = document.createElement("btn")
+        var buyBtn = document.createElement("a")
         // var dealStore = document.createElement("p")
         var dealOPrice = document.createElement("p")
         var dealSPrice = document.createElement("p")
