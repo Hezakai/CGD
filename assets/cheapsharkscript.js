@@ -411,7 +411,7 @@ function fetchGameInfo(value) {
         dealOPrice.textContent = "Normal Price: $" + dealsArr[zx].retailPrice
 
         //button builder
-        buyBtn.setAttribute("class", "my-12 h-12 w-24 bg-black text-white rounded-full hover:bg-green-500 hover:text-white")
+        buyBtn.setAttribute("class", "my-12 h-18 w-36 bg-black text-white rounded-full hover:bg-green-500 hover:text-white")
         buyBtn.setAttribute("target", "_blank")
         buyBtn.textContent = "Buy on " + csStores[storeCon].storeName
         buyBtn.setAttribute("href", "https://www.cheapshark.com/redirect?dealID=" + dealsArr[zx].dealID)
