@@ -81,7 +81,7 @@ function getApi(requestUrl) {
 
 var btnResponse = ""
 
-function initSearch() {
+function gameSearch() {
 
   let input = document.getElementById("searchInput").value;
   btnResponse = input;
