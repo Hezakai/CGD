@@ -37,6 +37,8 @@ function fetchGameInfo(value) {
       console.log("fetchGameInfo data:")
       dealsArr = data.deals
       console.log(dealsArr)
+      modalContent.innerHTML = "";
+      //modal builder
       for (let zx = 0; zx < dealsArr.length; zx++) {
         console.log(dealsArr[zx])
         var dealDiv = document.createElement("div")
@@ -44,7 +46,7 @@ function fetchGameInfo(value) {
         var dealStore = document.createElement("p")
         var dealOPrice = document.createElement("p")
         var dealSPrice = document.createElement("p")
-
+        
         dealLink.textContent = dealsArr[zx].dealID
         dealStore.textContent = dealsArr[zx].storeID
         dealOPrice.textContent = dealsArr[zx].retailPrice
