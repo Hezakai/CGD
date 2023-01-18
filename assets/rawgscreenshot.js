@@ -5,7 +5,7 @@ var screenshot2 = document.getElementById('screenshot2')
 var screenshot3 = document.getElementById('screenshot3')
 var screenshot4 = document.getElementById('screenshot4')
 var screenshot5 = document.getElementById('screenshot5')
-var screenshot6 = document.getElementById('screenshot6')
+
 
 
 
