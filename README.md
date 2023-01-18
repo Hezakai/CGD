@@ -1,6 +1,6 @@
 # Cheap Game Deals
 
-With the gaming industry switching from a physical to purely digital digitial product it has never been eaier to purchase a game you're interested in.  However, now that there an over abundance of retailers it can be difficult to find the best price.  Our site gathers information from over 34 online game retailers to show you the best deals for a title you're interested in.  
+With the gaming industry switching from a physical to purely digital digitial product it has never been easier to purchase a game you're interested in.  However, now that there are an over abundance of retailers it can be difficult to find the best price.  Our site gathers information from over 34 online game retailers to show you the best deals for a title you're interested in.  
 
 # API's used for this project
 
