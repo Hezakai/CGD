@@ -10,7 +10,7 @@ var screenshot6 = document.getElementById('screenshot6')
 
 
 
-function getApi(screenshotRequest) {
+function getscreenshotApi(screenshotRequest) {
   fetch(screenshotRequest)
 
     .then(function(screenshotResponse) {
@@ -36,6 +36,6 @@ function screenshotSearch() {
     btnResponse = input;
     gameSlug = btnResponse.replace(/\s+/g, '-').toLowerCase();
     var screenshotRequest = 'https://api.rawg.io/api/games/' + gameSlug + '/screenshots?key=09641c2e0fcd40ee8c29ef6543fe1103'
-    getApi(screenshotRequest);
+    getscreenshotApi(screenshotRequest);
     console.log(screenshotRequest)
 }
