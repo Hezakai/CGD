@@ -16,9 +16,11 @@ CheapShark = https://apidocs.cheapshark.com/
 # Project's screenshot
 
 
+![Landing Page.](./assets/imgs/landing_page.png)
 
+![Search Results.](./assets/imgs/search_results.png)
 
 
 
 # Page Link
-https://hezakai.github.io/CGD/
+CheapGameDeals = http://127.0.0.1:5500/CGD/index.html
