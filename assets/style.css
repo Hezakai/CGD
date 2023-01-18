@@ -1,4 +1,5 @@
 
+
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +29,7 @@ main {
 
 #resultsBox {
     margin-top: 10px;
-    height: 85vh;
+    height: 120vh;
     width: 98vw;
     border: .2rem solid black;
 }

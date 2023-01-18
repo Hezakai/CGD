@@ -16,8 +16,8 @@
 </head>
 
 <body class="bg-gray-900">
-    <header class="my-5 text-8xl text-white">
-        <h1>Cheap Game Deals</h1>
+    <header class="my-5 text-white">
+        <h1 class="text-8xl">I need a D<span class="text-sm">(eal)</span></h1>
     </header>
     <main>
         <!-- Search Section -->
@@ -30,7 +30,7 @@
                 id="searchBtn">Find Game Information and Sales</button>
         </div>
         <!-- Results Section -->
-        <section class="hidden" id="landscapeHidden">
+        <section class="hidden flex flex-col" id="landscapeHidden">
         <div id="resultsBox" class="results-box m-4 min-h-screen text-white flex flex-col lg:flex-row justify-items-start">
             <!-- Slideshow container -->
     <div class="slideshow flex flex-col m-5">
@@ -112,7 +112,7 @@
   <div><p>Platforms: </p></div>
   <div id="platforms"></div>
 </div>
-<div class="">
+<div class="flex-col">
   <div><p>Tags: </p></div>
   <div id="tags"></div>
 </div>
