@@ -21,4 +21,4 @@ CheapShark = https://apidocs.cheapshark.com/
 
 
 # Page Link
-CheapGameDeals = http://127.0.0.1:5500/CGD/index.html
+https://hezakai.github.io/CGD/
