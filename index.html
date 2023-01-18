@@ -16,118 +16,134 @@
 </head>
 
 <body class="bg-gray-900">
-    <header class="my-5 text-8xl text-white">
-        <h1>Cheap Game Deals</h1>
-    </header>
-    <main>
-        <!-- Search Section -->
-        <div class="flex flex-col justify-center items-center p-4 m-4" id="searchBar">
-            <!-- <h1>Enter Game Name</h1> -->
-            <input type="text" id="searchInput" class="text-center bg-slate-600 my-4"
-                placeholder="Enter Game Name"></input>
-            <button onclick="initSearch(), screenshotSearch(), gameSearch(), landscapeHidden()" type="searchBtn"
-                class="m-5 p-3 px-6 pt-2 text-white bg-slate-800 rounded-full baseline hover:bg-red-500"
-                id="searchBtn">Find Game Information and Sales</button>
-        </div>
-        <!-- Results Section -->
-        <section class="hidden" id="landscapeHidden">
-        <div id="resultsBox" class="results-box m-4 min-h-screen text-white flex flex-col lg:flex-row justify-items-start">
-            <!-- Slideshow container -->
-    <div class="slideshow flex flex-col m-5">
-    <div id="gameName" class="text-6xl"></div>
-    <div class="slideshow-container mt-4 max-w-full">
-    
-    <!-- Full-width images with number and caption text -->
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 6</div>
-      <img class="" src="" id="backgroundImg" style="width:100%">
+  <header class="my-5 text-8xl text-white">
+    <h1>Cheap Game Deals</h1>
+  </header>
+  <main>
+    <!-- Search Section -->
+    <div class="flex flex-col justify-center items-center p-4 m-4" id="searchBar">
+      <!-- <h1>Enter Game Name</h1> -->
+      <input type="text" id="searchInput" class="text-center bg-slate-600 my-4" placeholder="Enter Game Name"></input>
+      <button onclick="initSearch(), screenshotSearch(), gameSearch(), landscapeHidden()" type="searchBtn"
+        class="m-5 p-3 px-6 pt-2 text-white bg-slate-800 rounded-full baseline hover:bg-red-500" id="searchBtn">Find
+        Game Information and Sales</button>
     </div>
-  
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 6</div>
-      <img id="screenshot1" src="" style="width:100%">
-    </div>
-  
-    <div class="mySlides fade">
-        <div class="numbertext">3 / 6</div>
-        <img id="screenshot2" src="" style="width:100%">
-      </div>
+    <!-- Results Section -->
+    <section class="hidden" id="landscapeHidden">
+      <div id="resultsBox"
+        class="results-box m-4 min-h-screen text-white flex flex-col lg:flex-row justify-items-start">
+        <!-- Slideshow container -->
+        <div class="slideshow flex flex-col m-5">
+          <div id="gameName" class="text-6xl"></div>
+          <div class="slideshow-container mt-4 max-w-full">
 
-      <div class="mySlides fade">
-        <div class="numbertext">4 / 6</div>
-        <img id="screenshot3" src="" style="width:100%">
-      </div>
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 6</div>
+              <img class="" src="" id="backgroundImg" style="width:100%">
+            </div>
 
-      <div class="mySlides fade">
-        <div class="numbertext">5 / 6</div>
-        <img id="screenshot4" src="" style="width:100%">
-      </div>
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 6</div>
+              <img id="screenshot1" src="" style="width:100%">
+            </div>
 
-      <div class="mySlides fade">
-        <div class="numbertext">6 / 6</div>
-        <img id="screenshot5" src="" style="width:100%">
-      </div>
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 6</div>
+              <img id="screenshot2" src="" style="width:100%">
+            </div>
 
-    <a class="prev self-center" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="mySlides fade">
+              <div class="numbertext">4 / 6</div>
+              <img id="screenshot3" src="" style="width:100%">
+            </div>
 
-    </div>
+            <div class="mySlides fade">
+              <div class="numbertext">5 / 6</div>
+              <img id="screenshot4" src="" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">6 / 6</div>
+              <img id="screenshot5" src="" style="width:100%">
+            </div>
+
+            <a class="prev self-center" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          </div>
           <!-- Next and previous buttons -->
-    
-
-    <div class="text-center m-4">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-      <span class="dot" onclick="currentSlide(4)"></span>
-      <span class="dot" onclick="currentSlide(5)"></span>
-      <span class="dot" onclick="currentSlide(6)"></span>
-    </div>
-<div class="flex flex-row justify-between">
-<div class="">
-        <div><p>Release: </p></div>
-        <div id="releaseDate"></div>
-</div>
-<div class="">
-      <div><p>Publish: </p></div>
-      <div id="pub"></div>
-</div>
-  <div class="">
-    <div><p>Studio: </p></div>
-    <div id="studio"></div>
-</div>
-<div class="">
-  <div><p>META: </p></div>
-  <div id="metascore"></div>
-</div>
-<div class="">
-  <div><p>Rating: </p></div>
-  <div id="ratingUSER"></div>
-</div>
-<div class="">
-  <div><p>Genre: </p></div>
-  <div id="genre"></div>
-</div>
-<div class="">
-  <div><p>Platforms: </p></div>
-  <div id="platforms"></div>
-</div>
-<div class="">
-  <div><p>Tags: </p></div>
-  <div id="tags"></div>
-</div>
-</div>
-  </div>
-      <div class="flex flex-col lg:mt-24 self-stretch">
-        <div id="description"></div>
-        <button id="sales"class="my-12 h-12 w-36 bg-black text-white rounded-full self-center hover:bg-red-500 hover:text-white">FIND THE D</button>
+          <div class="text-center m-4">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+          </div>
+          <div class="flex flex-row justify-between">
+            <div class="">
+              <div>
+                <p>Release: </p>
+              </div>
+              <div id="releaseDate"></div>
+            </div>
+            <div class="">
+              <div>
+                <p>Publish: </p>
+              </div>
+              <div id="pub"></div>
+            </div>
+            <div class="">
+              <div>
+                <p>Studio: </p>
+              </div>
+              <div id="studio"></div>
+            </div>
+            <div class="">
+              <div>
+                <p>META: </p>
+              </div>
+              <div id="metascore"></div>
+            </div>
+            <div class="">
+              <div>
+                <p>Rating: </p>
+              </div>
+              <div id="ratingUSER"></div>
+            </div>
+            <div class="">
+              <div>
+                <p>Genre: </p>
+              </div>
+              <div id="genre"></div>
+            </div>
+            <div class="">
+              <div>
+                <p>Platforms: </p>
+              </div>
+              <div id="platforms"></div>
+            </div>
+            <div class="">
+              <div>
+                <p>Tags: </p>
+              </div>
+              <div id="tags"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col lg:mt-24 self-stretch">
+          <div id="description"></div>
+          <button id="sales"
+            class="my-12 h-12 w-36 bg-black text-white rounded-full self-center hover:bg-red-500 hover:text-white">FIND
+            THE D</button>
+        </div>
       </div>
-    </div>
 
-    <section class="flex flex-col w-96 text-white">
+      <section class="flex flex-col w-96 text-white">
 
+      </section>
     </section>
-  </section>
     <!-- The Modal -->
     <div class="modal myModal hidden">
       <!-- Modal content -->
@@ -137,21 +153,17 @@
 
         <div id="modalContent" class="modal-info text-center"></div>
 
-
-        <!-- <button class="my-12 h-12 w-24 bg-black text-white rounded-full hover:bg-red-500 hover:text-white"><a
-            id="buyBtn" href="">Buy Now!</a></button> -->
       </div>
     </div>
-    </main>
-    <footer class="text-white">2022 Cheap Game Deals©</footer>
-    <!--uncompressed jQuery CDN-->
-    <script src="https://code.jquery.com/jquery-3.6.3.js"
-        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-    <!--links to the JS file in the assets folder-->
-    <script src="./assets/rawgscript.js"></script>
-    <script src="./assets/rawgscreenshot.js"></script>
-    <script src="./assets/cheapsharkscript.js"></script>
-    <script src="./assets/slideshow.js"></script>
+  </main>
+  <footer class="text-white">2022 Cheap Game Deals©</footer>
+  <!--uncompressed jQuery CDN-->
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+  <!--links to the JS file in the assets folder-->
+  <script src="./assets/rawgscript.js"></script>
+  <script src="./assets/rawgscreenshot.js"></script>
+  <script src="./assets/cheapsharkscript.js"></script>
+  <script src="./assets/slideshow.js"></script>
 </body>
-
 </html>

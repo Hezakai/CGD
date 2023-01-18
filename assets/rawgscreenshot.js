@@ -6,17 +6,11 @@ var screenshot3 = document.getElementById('screenshot3')
 var screenshot4 = document.getElementById('screenshot4')
 var screenshot5 = document.getElementById('screenshot5')
 
-
-
-
-
 function getscreenshotApi(screenshotRequest) {
   fetch(screenshotRequest)
-
     .then(function(screenshotResponse) {
       console.log(screenshotResponse)
       return screenshotResponse.json();
-
     })
       .then(function (screenshotData) {
         console.log(screenshotData);
@@ -25,13 +19,9 @@ function getscreenshotApi(screenshotRequest) {
         screenshot3.setAttribute("src", screenshotData.results[2].image)
         screenshot4.setAttribute("src", screenshotData.results[3].image)
         screenshot5.setAttribute("src", screenshotData.results[4].image)
-      
-      
   })
 }
-
 function screenshotSearch() {
-
     let input = document.getElementById("searchInput").value;
     btnResponse = input;
     gameSlug = btnResponse.replace(/\s+/g, '-').toLowerCase();

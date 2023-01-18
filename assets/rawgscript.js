@@ -16,10 +16,6 @@ var tags = document.getElementById('tags')
 
 var coverImg = document.getElementById('backgroundImg')
 
-
-
-
-
 function getApi(requestUrl) {
   fetch(requestUrl)
 
@@ -76,8 +72,6 @@ function getApi(requestUrl) {
     
    
 }
-
-
 
 var btnResponse = ""
 
