@@ -25,14 +25,15 @@
             <!-- <h1>Enter Game Name</h1> -->
             <input type="text" id="searchInput" class="text-center bg-slate-600 my-4"
                 placeholder="Enter Game Name"></input>
-            <button onclick="initSearch(), screenshotSearch(), gameSearch()" type="searchBtn"
+            <button onclick="initSearch(), screenshotSearch(), gameSearch(), landscapeHidden()" type="searchBtn"
                 class="m-5 p-3 px-6 pt-2 text-white bg-slate-800 rounded-full baseline hover:bg-red-500"
                 id="searchBtn">Find Game Information and Sales</button>
         </div>
         <!-- Results Section -->
-        <div id="resultsBox" class="results-box m-4 text-white flex flex-col lg:flex-row">
+        <section class="hidden" id="landscapeHidden">
+        <div id="resultsBox" class="results-box m-4 text-white flex flex-col lg:flex-row justify-items-start">
             <!-- Slideshow container -->
-    <div class="slideshow flex flex-col m-5 grow">
+    <div class="slideshow flex flex-col m-5">
     <div id="gameName" class="text-6xl"></div>
     <div class="slideshow-container mt-4 max-w-full">
     
@@ -98,6 +99,7 @@
     <section class="flex flex-col w-96 text-white ">
 
     </section>
+  </section>
     <!-- The Modal -->
     <div class="modal myModal hidden">
       <!-- Modal content -->

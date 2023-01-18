@@ -98,4 +98,7 @@ function gameSearch() {
   document.getElementById("studio").innerHTML = ""
 }
 
-
+function landscapeHidden() {
+  var T = document.getElementById("landscapeHidden");
+  T.style.display = "block";
+}
