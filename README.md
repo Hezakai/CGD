@@ -12,11 +12,11 @@ CheapShark is a database of stores and their prices.  This is where we find the 
 
 # Project's screenshot
 
-![Landing Page.](./assets/imgs/landing_page.png)
+![Landing Page](./assets/imgs/CGDlandingpage.png)
 
-![Search Results.](./assets/imgs/search_results.png)
+![Search Results](./assets/imgs/CGDresultspage.png)
 
-
+![Store Modal](./assets/imgs/CGDstoremodal.png)
 
 # Page Link
 Cheap Game Deals = https://hezakai.github.io/CGD/
