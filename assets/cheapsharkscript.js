@@ -391,17 +391,19 @@ function fetchGameInfo(value) {
       dealsArr = data.deals
       //clears any perviously generated modal content
       modalContent.innerHTML = "";
+      var modalBanner = document.createElement("h1")
+      modalBanner.setAttribute("class", "my-5 text-8xl text-white")
+      modalBanner.textContent = "HERES THE D"
+      modalContent.append(modalBanner)
       //modal builder
       for (let zx = 0; zx < dealsArr.length; zx++) {
         var dealDiv = document.createElement("div")
         var buyBtn = document.createElement("a")
-        // var dealStore = document.createElement("p")
         var dealOPrice = document.createElement("p")
         var dealSPrice = document.createElement("p")
         var storeBanner = document.createElement("img")
         //finds store ID
         storeCon = (dealsArr[zx].storeID - 1)
-        // dealStore.textContent = csStores[storeCon].storeName
         // finds store banner
         storeBanner.setAttribute("src", "https://www.cheapshark.com/" + csStores[storeCon].images.banner)
 
@@ -417,7 +419,7 @@ function fetchGameInfo(value) {
         
         //builds new div
         dealDiv.setAttribute("id", "sale" + zx)
-        dealDiv.setAttribute("class", "deal")
+        dealDiv.setAttribute("class", "deal m-8")
 
         modalContent.appendChild(dealDiv)
         //adds results to new div
@@ -445,6 +447,3 @@ sales.addEventListener('click', function (event) {
   modals[0].classList.remove('hidden')
   modals[0].classList.add('show')
 })
-
-{/* <button class="my-12 h-12 w-24 bg-black text-white rounded-full hover:bg-red-500 hover:text-white"><a
-id="buyBtn" href="">Buy Now!</a></button> */}
