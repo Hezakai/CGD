@@ -1,20 +1,16 @@
 # Cheap Game Deals
 
-In this website you will be able to look up your favorite games and get similar games for the lowest price possible.
-
-
-
-This project has been brought to you by the combined 4 brain cells referred to as Fail Force Four!
+With the gaming industry switching from a physical to purely digital digitial product it has never been eaier to purchase a game you're interested in.  However, now that there an over abundance of retailers it can be difficult to find the best price.  Our site gathers information from over 34 online game retailers to show you the best deals for a title you're interested in.  
 
 # API's used for this project
 
-The API's used to bring you this project is all thanks to the teams at:
-
 RAWG = https://rawg.io/apidocs
+RAWG is a game database that provides our title specifc data.  Items like screenshots, ratings, synopsis etc. 
+
 CheapShark = https://apidocs.cheapshark.com/
+CheapShark is a database of stores and their prices.  This is where we find the best deals for the game you're interested in.
 
 # Project's screenshot
-
 
 ![Landing Page.](./assets/imgs/landing_page.png)
 
@@ -23,4 +19,4 @@ CheapShark = https://apidocs.cheapshark.com/
 
 
 # Page Link
-CheapGameDeals = http://127.0.0.1:5500/CGD/index.html
+Cheap Game Deals = https://hezakai.github.io/CGD/
